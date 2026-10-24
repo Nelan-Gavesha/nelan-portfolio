@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelan Gavesha | Resume Builder</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="animated-bg"><span></span><span></span><span></span></div>
+
+  <header class="header">
+    <a href="index.html" class="logo">Nelan<span>.</span></a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" class="active">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header" style="padding-bottom: 20px;">
+      <h1>CV / Resume Builder</h1>
+      <p>Customize my CV, choose a format, and download a print-ready PDF.</p>
+    </div>
+
+    <div class="resume-builder-container">
+      <!-- CONTROL PANEL -->
+      <aside class="controls-panel">
+        <h3>1. Select Format</h3>
+        <div class="control-group">
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="cvFormat" value="general" class="format-radio" checked>
+              General (Modern)
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="cvFormat" value="ats" class="format-radio">
+              ATS (Plain)
+            </label>
+          </div>
+          <p class="hint">General: two columns with colour, icons and highlights. Best for recruiter emails and direct sharing. ATS: single column, plain text, no graphics. Best for automated job portals.</p>
+        </div>
+
+        <h3>2. Include Sections</h3>
+        <div class="control-group checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="summary" checked>
+            Professional Summary
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="skills" checked>
+            Skills
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="education" checked>
+            Education
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="experience" checked>
+            Work Experience
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="projects" checked>
+            University Projects
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="achievements" checked>
+            Key Achievements
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="competencies">
+            Core Competencies
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="cv-checkbox" data-target="goals">
+            Career Objective (Long)
+          </label>
+        </div>
+
+        <h3>3. Accent Colour</h3>
+        <div class="control-group">
+          <div class="swatches" id="accentSwatches">
+            <button type="button" class="swatch active" data-accent="ocean" title="Ocean" aria-label="Ocean accent"></button>
+            <button type="button" class="swatch" data-accent="violet" title="Violet" aria-label="Violet accent"></button>
+            <button type="button" class="swatch" data-accent="emerald" title="Emerald" aria-label="Emerald accent"></button>
+            <button type="button" class="swatch" data-accent="rose" title="Rose" aria-label="Rose accent"></button>
+          </div>
+          <p class="hint">Applies to the General format only. ATS stays black and white.</p>
+        </div>
+      </aside>
+
+      <!-- PREVIEW AREA -->
+      <div class="preview-area">
+        <div class="preview-toolbar">
+          <button class="btn-download" id="downloadPdf">
+            ⬇ Download Customized CV
+          </button>
+        </div>
+
+        <!-- ============ CV DOCUMENT ============ -->
+        <div id="resume-preview" class="preview-general" data-accent="ocean">
+
+          <!-- HEADER -->
+          <header class="cv-header">
+            <div class="cv-avatar" aria-hidden="true">NG</div>
+            <div class="cv-header-left">
+              <h1>Nelan Gavesha</h1>
+              <p class="cv-title">IT Undergraduate | Aspiring System Analyst</p>
+              <p class="cv-contacts">
+                <span>
+                  <svg class="cv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  <a href="mailto:nelangavesha2004@gmail.com">nelangavesha2004@gmail.com</a>
+                </span>
+                <span>
+                  <svg class="cv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+                  <a href="https://www.linkedin.com/in/nelan-gavesha-a868a5434">linkedin.com/in/nelan-gavesha-a868a5434</a>
+                </span>
+                <span>
+                  <svg class="cv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+                  <a href="https://github.com/Nelan-Gavesha">github.com/Nelan-Gavesha</a>
+                </span>
+                <span>
+                  <svg class="cv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Katugasthota, Sri Lanka
+                </span>
+              </p>
+            </div>
+          </header>
+
+          <!-- HIGHLIGHTS (General format only) -->
+          <div class="cv-highlights" aria-hidden="true">
+            <div class="cv-highlight"><strong>3.91</strong><span>Current GPA</span></div>
+            <div class="cv-highlight"><strong>247</strong><span>Island Rank · A/L</span></div>
+            <div class="cv-highlight"><strong>12 mo</strong><span>Industry Training</span></div>
+            <div class="cv-highlight"><strong>3</strong><span>Team Projects</span></div>
+          </div>
+
+          <!-- BODY -->
+          <div class="cv-body">
+
+            <!-- SIDEBAR (merged into a single column in ATS) -->
+            <div class="cv-sidebar">
+              <section class="cv-section" data-cv-section="skills">
+                <h2>Skills</h2>
+                <div class="cv-skill-group">
+                  <p class="cv-skill-label">Programming</p>
+                  <p class="cv-skill-values"><span class="cv-chip">Python<span class="sep">, </span></span><span class="cv-chip">PHP<span class="sep">, </span></span><span class="cv-chip">JavaScript<span class="sep">, </span></span><span class="cv-chip">SQL<span class="sep">, </span></span><span class="cv-chip">HTML<span class="sep">, </span></span><span class="cv-chip">CSS</span></p>
+                </div>
+                <div class="cv-skill-group">
+                  <p class="cv-skill-label">Databases</p>
+                  <p class="cv-skill-values"><span class="cv-chip">MySQL<span class="sep">, </span></span><span class="cv-chip">SQLite<span class="sep">, </span></span><span class="cv-chip">MariaDB</span></p>
+                </div>
+                <div class="cv-skill-group">
+                  <p class="cv-skill-label">Analytics &amp; BI</p>
+                  <p class="cv-skill-values"><span class="cv-chip">Power BI<span class="sep">, </span></span><span class="cv-chip">Microsoft Excel<span class="sep">, </span></span><span class="cv-chip">Data Mining (AI Studio)<span class="sep">, </span></span><span class="cv-chip">Pandas</span></p>
+                </div>
+                <div class="cv-skill-group">
+                  <p class="cv-skill-label">Frameworks &amp; Tools</p>
+                  <p class="cv-skill-values"><span class="cv-chip">Streamlit<span class="sep">, </span></span><span class="cv-chip">NiceGUI<span class="sep">, </span></span><span class="cv-chip">MVC<span class="sep">, </span></span><span class="cv-chip">Git<span class="sep">, </span></span><span class="cv-chip">GitHub<span class="sep">, </span></span><span class="cv-chip">VS Code<span class="sep">, </span></span><span class="cv-chip">WAMP/XAMPP</span></p>
+                </div>
+                <div class="cv-skill-group">
+                  <p class="cv-skill-label">Languages</p>
+                  <p class="cv-skill-values"><span class="cv-chip">English (Professional)<span class="sep">, </span></span><span class="cv-chip">Sinhala (Native)</span></p>
+                </div>
+              </section>
+
+              <section class="cv-section" data-cv-section="competencies">
+                <h2>Core Competencies</h2>
+                <ul class="cv-competencies">
+                  <li>Systems Analysis &amp; Design</li>
+                  <li>Requirements Engineering</li>
+                  <li>Business Process Modelling</li>
+                  <li>Database Design (ERD, SQL)</li>
+                  <li>Data Visualization &amp; Reporting</li>
+                  <li>SDLC &amp; Agile Fundamentals</li>
+                  <li>Stakeholder Communication</li>
+                  <li>Team Collaboration</li>
+                </ul>
+              </section>
+
+              <section class="cv-section" data-cv-section="goals">
+                <h2>Career Objective</h2>
+                <p>To secure a System Analyst internship or entry-level position where I can apply my blend of business and ICT knowledge to design effective technology solutions, while continuing to develop as an ICT professional.</p>
+              </section>
+            </div>
+
+            <!-- MAIN COLUMN -->
+            <div class="cv-main">
+
+              <section class="cv-section" data-cv-section="summary">
+                <h2>Professional Summary</h2>
+                <p>
+                  Business Information Systems undergraduate at the University of Sri Jayewardenepura
+                  (<strong>GPA 3.91</strong>) with a unique blend of management and ICT expertise.
+                  Proven ability to translate business requirements into functional technical solutions
+                  through hands-on experience in systems analysis, database design, and full-stack
+                  development. Seeking a System Analyst role to drive digital transformation initiatives.
+                </p>
+              </section>
+
+              <section class="cv-section" data-cv-section="education">
+                <h2>Education</h2>
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>B.Sc. (Hons) in Business Information Systems</h3>
+                    <span class="cv-item-date">2025 – 2028 (Expected)</span>
+                  </div>
+                  <p class="cv-item-sub">University of Sri Jayewardenepura — Faculty of Management Studies &amp; Commerce</p>
+                  <p class="cv-item-meta">Current GPA: 3.91 / 4.00</p>
+                  <p class="cv-item-detail"><strong>Relevant Coursework:</strong> Systems Analysis &amp; Design, Database Management, ERP Systems, Management Information Systems, Business Intelligence, IT Governance, Software Engineering.</p>
+                </div>
+
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>G.C.E. Advanced Level — Commerce Stream</h3>
+                    <span class="cv-item-date">2023</span>
+                  </div>
+                  <p class="cv-item-sub">Dharmaraja College, Kandy</p>
+                  <p class="cv-item-meta">Z-Score: 2.15 | District Rank: 11 | Island Rank: 247</p>
+                  <p class="cv-item-detail">3 A passes — ICT, Accounting, Business Studies (General English: A).</p>
+                </div>
+
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>G.C.E. Ordinary Level</h3>
+                    <span class="cv-item-date">2020</span>
+                  </div>
+                  <p class="cv-item-sub">Sri Rahula College, Kandy</p>
+                  <p class="cv-item-meta">6 A passes, 3 B passes</p>
+                </div>
+              </section>
+
+              <section class="cv-section" data-cv-section="experience">
+                <h2>Work Experience</h2>
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>Sales Assistant — Industrial Training</h3>
+                    <span class="cv-item-date">Feb 2024 – Feb 2025</span>
+                  </div>
+                  <p class="cv-item-sub">Senarath Construction — Kurunegala, Sri Lanka</p>
+                  <ul>
+                    <li>Operated weighbridge systems and documented daily operational metrics, ensuring full compliance with company procedures.</li>
+                    <li>Delivered product guidance to daily walk-in customers, improving satisfaction and supporting sales conversion.</li>
+                    <li>Maintained store inventory records and prepared accurate daily reports for management review.</li>
+                    <li>Collaborated with a cross-functional store team to streamline routine operational tasks.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="cv-section" data-cv-section="projects">
+                <h2>University Projects</h2>
+
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>YrDoc — Healthcare Booking &amp; Digital Prescription Platform</h3>
+                    <span class="cv-item-date">Year 1</span>
+                  </div>
+                  <p class="cv-item-sub">Python · Streamlit · JSON · CSV · Pandas</p>
+                  <ul>
+                    <li>Co-led business ideation for a healthcare platform connecting patients, doctors, and pharmacies.</li>
+                    <li>Defined core workflows: appointment booking, prescription sharing, medicine inventory, and quotation generation.</li>
+                    <li>Presented the business concept to the academic evaluation panel during the final viva.</li>
+                  </ul>
+                </div>
+
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>SaveX — AI-Powered Personal Financial Management System</h3>
+                    <span class="cv-item-date">Year 2</span>
+                  </div>
+                  <p class="cv-item-sub">Python · NiceGUI · SQLite · Google Gemini API · Pandas</p>
+                  <ul>
+                    <li>Originated the business concept for an AI-driven finance platform serving individual users.</li>
+                    <li>Defined functional scope covering expense tracking, budgeting, loan analysis, deposit planning, and investment comparison.</li>
+                    <li>Shaped AI advisory features powered by the Google Gemini API for personalized financial guidance.</li>
+                  </ul>
+                </div>
+
+                <div class="cv-item">
+                  <div class="cv-item-head">
+                    <h3>YrDoc — Integrated Digital Healthcare Platform</h3>
+                    <span class="cv-item-date">Year 2</span>
+                  </div>
+                  <p class="cv-item-sub">PHP · MySQL · JavaScript · HTML/CSS · MVC · Leaflet</p>
+                  <ul>
+                    <li>Co-designed a full-stack platform supporting four user roles: patients, doctors, pharmacies, and administrators.</li>
+                    <li>Defined requirements for digital prescriptions, medical records, pharmacy quotations, and map-based doctor discovery.</li>
+                    <li>Contributed to governance decisions on role-based access control and audit logging for sensitive health data.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="cv-section" data-cv-section="achievements">
+                <h2>Key Achievements</h2>
+                <ul>
+                  <li>Ranked <strong>Island Rank 247</strong> at the G.C.E. A/L examination in the Commerce stream.</li>
+                  <li>Maintained a university GPA of <strong>3.91</strong> while contributing to three major group projects.</li>
+                  <li>Selected as a member of the University Baseball Team (2025).</li>
+                  <li>Successfully completed a one-year industrial training program in a live business environment.</li>
+                </ul>
+              </section>
+
+            </div>
+          </div>
+        </div>
+        <!-- ============ END CV DOCUMENT ============ -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Nelan Gavesha. Built with HTML, CSS &amp; JavaScript.</p>
+  </footer>
+  <script src="script.js"></script>
+
+  <!-- Accent colour swatches (uses a data attribute, so it never clashes with the format switcher in script.js) -->
+  <script>
+    (function () {
+      var cv = document.getElementById('resume-preview');
+      var swatches = document.querySelectorAll('#accentSwatches .swatch');
+      swatches.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          cv.setAttribute('data-accent', btn.getAttribute('data-accent'));
+          swatches.forEach(function (s) { s.classList.toggle('active', s === btn); });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
